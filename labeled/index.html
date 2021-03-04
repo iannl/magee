@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maniac Magee Map: Labled</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <style>
+            .img {
+                margin-left: -666px;
+                scale: 100%;
+            }
+            #center {
+                top: 60%;
+                left: 60%;
+            }
+            html {
+                overflow: unset;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="center"></div>
+        <img id="img" class="img" src="../../exported/HQ/Maniac Magee Map-01.png" usemap="#map">
+<map class="img" name="map">
+  <area alt="Hector Street" title="Hector Street" href="hector/index.html" coords="2497,16,2805,6855" shape="rect">
+  <area alt="Beale's House" title="Beale's House" href="beale/index.html" coords="1009,901,1192,1311" shape="rect">
+  <area alt="McNab's House" title="McNab's House" href="mcnab/index.html" coords="3867,0,4083,378" shape="rect">
+  <area alt="Thompson’s House" title="Thompson’s House" href="tompson/index.html" coords="1866,2664,2168,2983" shape="rect">
+  <area alt="Cobble's Corner" title="Cobble's Corner" href="cobble/index.html" coords="1602,3344,2357,4153" shape="rect">
+  <area alt="Finsterwald's House" title="Finsterwald's House" href="finsterwald/index.html" coords="2956,2934,3161,3322" shape="rect">
+</map>
+<script>
+    $(document).ready(function(){
+        window.scrollTo(($(document).width()-$(window).width())/2,0);
+    });
+</script>
+
+    </body>
+</html>
