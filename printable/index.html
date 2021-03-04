@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html onmousemove="move()">
+    <head>
+        <div id="test1" style="position: fixed; background: red; width: 10px; height: 10px;"></div>
+        <title>Maniac Magee Map</title>
+        <meta charset="utf-8">
+        <style>
+            .overlay {
+                position: fixed;
+            }
+            #l1 {
+                display: hidden;
+            }
+            #l2 {
+                display: hidden;
+            }
+            #l3 {
+                display: hidden;
+            }
+            #l4 {
+                display: hidden;
+            }
+            #l5 {
+                display: hidden;
+            }
+            body, html {
+  height: 100%;
+  margin: 0;
+}
+html {
+    background: url('../Maniac Magee Map-01.png') fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url('../exported/hq/Maniac Magee Map-01.png') no-repeat fixed center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+        </style>
+    </head>
+    <body id="bd">
+        <p style="padding-top: 120%;" id="padding"><br></p>
+        <div id="cr">
+            <h1>©2021 iannl</h1>
+            <p>©2021 iannl. All rights reserved. You may use images with credit.</p>
+            <p id="ty"></p>
+        </div>
+        <!--<div class="overlay">
+            <img onmouseover="show('l1')" id="t1" src="../exported/t1-01.png">
+            <img onmouseover="show('l1')" id="t2" src="../exported/t2-01.png">
+            <img onmouseover="show('l1')" id="t3" src="../exported/t3-01.png">
+            <img onmouseover="show('l1')" id="t4" src="../exported/t4-01.png">
+            <img onmouseover="show('l1')" id="t5" src="../exported/t5-01.png">
+
+            <img id="l1" src="../exported/l1-01.png">
+            <img id="l2" src="../exported/l2-01.png">
+            <img id="l3" src="../exported/l3-01.png">
+            <img id="l4" src="../exported/l4-01.png">
+            <img id="l5" src="../exported/l5-01.png">
+        </div>-->
+        <div class="map bg"></div>
+        <script>
+            var rect1 = {x: 50, y: 50, width: 50, height: 50}
+            function move() {
+                var rect2 = {x: event.clientX, y: event.clientY, width: 10, height: 10}
+                if (rect1.x < rect2.x + rect2.width &&
+                    rect1.x + rect1.width > rect2.x &&
+                    rect1.y < rect2.y + rect2.height &&
+                    rect1.y + rect1.height > rect2.y) {
+                        document.getElementsByTagName('html')[0].style.cursor='pointer'
+                        document.getElementById('test1').style.backgroundColor='darkred'
+                } else {
+                    document.getElementsByTagName('html')[0].style.cursor=''
+                    document.getElementById('test1').style.backgroundColor='red'
+                    document.getElementById('test1').style.marginLeft=rect1.x+'px'
+                    document.getElementById('test1').style.marginTop=rect1.y+'px'
+                    document.getElementById('test1').style.width=rect1.width+'px'
+                    document.getElementById('test1').style.height=rect1.height+'px'
+                }
+            }
+
+            location.replace('#bd')
+            if (document.addEventListener) {
+  document.addEventListener('contextmenu', function(e) {
+        location.replace('#cr')
+        document.getElementById('padding').style.paddingTop=window.innerHeight+'px'
+        document.getElementById('ty').innerHTML+=`
+Thank you for printing this map!
+<br>
+This map is a map of the fictional book Maniac Magee.
+<br>
+Maniac Magee is a novel written by American author Jerry Spinelli and published in 1990.
+<br>
+Exploring themes of racism and inequality, it follows the story of an orphan boy looking for a home in the fictional town of Two Mills.
+<br>
+Two Mills is harshly segregated between the East and West, blacks and whites.
+<br>
+In the book Maniac Magee, the themes are about homelessness and family, racism, friendship, and the importance of school and literacy.
+<br><br>
+QUICK QUIZ
+<br><br>
+1. What was the most perilous challenge Russell and Piper gave Maniac to do?<br>
+A. kiss the American bison baby
+<br>
+B. go into East Side
+<br>
+C. knock on Finsterwald’s door
+<br><br>
+2. When Maniac raced Mars Bar, he caused more trouble, and Mars Bar now hated Jeffrey Magee. Why?
+<br>
+A. he disgraced him by running backwards
+<br>
+B. he disgraced him by skipping the last yards
+<br>
+C. he disgraced him by hopping the last yards
+<br><br>
+3. Why did Maniac get mad at Russell and Piper?
+<br>
+A. they got his baseball
+<br>
+B. they got Amanda’s book
+<br>
+C. they got Grayson’s glove
+<br><br>
+4. Why did Maniac start sleeping in people’s backyard’s or on their porches?
+<br>
+A. he thought they owed it to him
+<br>
+B. he thought they would welcome him<br>
+C. he thought they would not mind
+<br><br>
+5. In July, Maniac was running and felt as if someone was following him. Who turned out to be running at the same time?
+<br>
+A. John McNab
+<br>
+B. Mars Bar
+<br>
+C. Amanda Beale`
+        window.print()
+        location.replace('#bd')
+        document.getElementById('bd').innerHTML=`
+        <p style="padding-top: 120%;" id="padding"><br></p>
+        <div id="cr">
+            <h1>©2021 iannl</h1>
+            <p>©2021 iannl. All rights reserved. You may use images with credit.</p>
+            <p id="ty"></p>
+        </div>
+        <div class="map bg"></div>`
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function() {
+    window.event.returnValue = false;
+  });
+}
+        </script>
+    </body>
+</html>
